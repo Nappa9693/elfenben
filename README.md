@@ -47,3 +47,8 @@ To build do:
 To run the tests do:
 
   `npm test`
+
+### Planned Language features
+* Support for ES6 class keyword functionalaity.
+* Support for ES6 string interpolation.
+* Optional types (similar to Typescript)
