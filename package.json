@@ -39,8 +39,10 @@
     "underscore": "^1.8.2"
   },
   "scripts": {
-    "test": "lispy test/test.ls test/test.js && node test/test.js",
-    "prepublish": "lispy src/lispy.ls lib/lispy.js && lispy src/repl.ls lib/repl.js && lispy src/require.ls lib/require.js && browserify -t brfs lib/browser.js > lib/browser-bundle.js && lispy test/test.ls test/test.js"
+    "build-test": "lispy test/test.ls test/test.js",
+    "build": "lispy src/lispy.ls lib/lispy.js && lispy src/repl.ls lib/repl.js && lispy src/require.ls lib/require.js ",
+    "test": "node test/test.js",
+    "bundle": "browserify -t brfs lib/browser.js > lib/browser-bundle.js"
   },
   "preferGlobal": true,
   "dependencies": {
