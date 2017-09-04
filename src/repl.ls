@@ -1,5 +1,5 @@
 ;; A very simple REPL written in LispyScript
-
+;; TODO: Using vm allows for ES6 syntax but breaks the browser REPL. Need to find an alternative that can work for both.
 (require "./require")
 (var readline (require "readline")
      ls (require "../lib/ls")
