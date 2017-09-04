@@ -3,7 +3,8 @@
 (require "./require")
 (var readline (require "readline")
      ls (require "../lib/ls")
-     prefix "lispy> ")
+     prefix "lispy> "
+     vm (require "vm"))
 
 (set exports.runrepl
   (function ()
@@ -12,7 +13,7 @@
       (function (line)
         (try
           (var l (ls._compile line))
-          (console.log (this.eval l))
+          (console.log (vm.runInThisContext l))
           (function (err)
             (console.log err)))
         (rl.setPrompt prefix prefix.length)
