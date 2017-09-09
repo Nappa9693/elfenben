@@ -1,48 +1,41 @@
 {
-  "name": "lispyscript",
-  "description": "A JavaScript with Lispy Syntax and Macros",
+  "name": "elfenben",
+  "description": "A JavaScript with lipsy Syntax and Macros",
   "keywords": [
     "javascript",
     "language",
-    "lispyscript",
+    "elfenben",
     "compiler",
     "lisp"
   ],
-  "author": "Santosh Rajan",
+  "author": "Nappa9693",
   "version": "1.0.1",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.github.com/santoshrajan/lispyscript/master/LICENSE"
-    }
-  ],
+  "license": "MIT",
   "engines": {
-    "node": ">=0.4.0"
+    "node": ">=6.11.2"
   },
   "directories": {
     "lib": "./lib"
   },
   "main": "./lib/ls",
   "bin": {
-    "lispy": "./bin/lispy.js"
+    "elfenben": "./bin/elfenben.js"
   },
-  "homepage": "https://github.com/santoshrajan/lispyscript",
-  "bugs": "https://github.com/santoshrajan/lispyscript/issues",
+  "homepage": "https://github.com/Nappa9693/elfenben",
+  "bugs": "https://github.com/Nappa9693/elfenben/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/santoshrajan/lispyscript.git"
+    "url": "git://github.com/Nappa9693/elfenben.git"
   },
   "devDependencies": {
-    "browserify": ">2.14.1",
     "tinix": "<=0.0.15",
     "brfs": ">=0.0.6",
     "underscore": "^1.8.2"
   },
   "scripts": {
-    "build-test": "lispy test/test.ls test/test.js",
-    "build": "lispy src/lispy.ls lib/lispy.js && lispy src/repl.ls lib/repl.js && lispy src/require.ls lib/require.js ",
-    "test": "node test/test.js",
-    "bundle": "browserify -t brfs lib/browser.js > lib/browser-bundle.js"
+    "build-test": "elfenben test/test.elf test/test.js",
+    "build": "elfenben src/elfenben.elf lib/elfenben.js && elfenben src/repl.elf lib/repl.js && elfenben src/require.elf lib/require.js ",
+    "test": "node test/test.js"
   },
   "preferGlobal": true,
   "dependencies": {

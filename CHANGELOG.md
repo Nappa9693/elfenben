@@ -1,5 +1,21 @@
 ### Change Log
 
+### Elfenben Changelog
+
+### Version 1.0.1, 9 September 2017
+
+Name change from LispyScript to Elfenben.
+Removed old examples. (to be replaced with updated code)
+Removed dependency on browserify.
+
+### LispyScript changelog (for historical purposes)
+
+### Version 1.0.1, 4 September 2017
+
+Added "let" and "const" ES6 keywords to the language. 
+Updated package.json file.
+Changed repl to use node vm instead of eval.
+
 ### Version 1.0.0, 6 Nov 2015
 
 Added sitemap support.

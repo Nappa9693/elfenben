@@ -8,10 +8,10 @@
 (function namedFnNoSpaceBeforeArgs(x y) 
   (- x y))
 
-;; Def testgroup name - lispyscript
-;; tests lispyscript expressions
+;; Def testgroup name - elfenben
+;; tests elfenben expressions
 
-(testGroup lispyscript
+(testGroup elfenben
 
 (assert (true? true) "(true? true)")
 (assert (false? false) "(false? false)")
@@ -164,14 +164,14 @@
 (function browserTest ()
   (var el (document.getElementById "testresult"))
   (if el.outerHTML
-    (set el.outerHTML (str "<pre>" (testRunner lispyscript "LispyScript Testing") "</pre>"))
-    (set el.innerHTML (testRunner lispyscript "LispyScript Testing"))))
+    (set el.outerHTML (str "<pre>" (testRunner elfenben "Elfenben Testing") "</pre>"))
+    (set el.innerHTML (testRunner elfenben "Elfenben Testing"))))
 
 ;; If not running on browser
 ;; call test runner with test group lispysript
 ;; otherwise call browserTest
 (if (undefined? window)
-  (console.log (testRunner lispyscript "LispyScript Testing"))
+  (console.log (testRunner elfenben "Elfenben Testing"))
   (set window.onload browserTest))
 
 
