@@ -37,10 +37,11 @@ To run the tests do:
 * Support for ES6 class keyword functionalaity.
 * Support for ES6 string interpolation.
 * Optional types (similar to Typescript)
+* Commands for project generation.
 
 ### Elfenben is a fork of the awesome Lispyscript project
 Without the great developers behind Lispyscript, Elfenben would not be possible.
-The project can be found [here](https://github.com/santoshrajan/lispyscript)
+The project can be found [here](https://github.com/santoshrajan/lispyscript).
 
 ### Lispyscript was inspired by [Beating the averages](http://www.paulgraham.com/avg.html).
 
