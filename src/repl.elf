@@ -3,7 +3,7 @@
 (require "./require")
 (var readline (require "readline")
      ls (require "../lib/ls")
-     prefix "lispy> "
+     prefix "elfenben> "
      vm (require "vm"))
 
 (set exports.runrepl
