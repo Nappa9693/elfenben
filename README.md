@@ -15,15 +15,15 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 * 
 ### Installing and General Usage
 
-To install: 
+**To install:** 
 
   `npm install -g elfenben`
 
-Run the REPL:
+**Run the REPL:**
 
   `elfenben`
 
-Transpile:
+**Transpile:**
 
   `elfenben app.ls`
 
@@ -42,11 +42,11 @@ Transpile:
 
 `npm run build-test`
   
-To build do:
+**To build do:**
 
 `npm run build`
 
-To run the tests do:
+**To run the tests do:**
 
 `npm test`
 
