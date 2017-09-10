@@ -12,7 +12,7 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 * Monads
 * Server-side REPL
 * Unit test feature
-* 
+
 ### Installing and General Usage
 
 **To install:** 
