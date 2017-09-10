@@ -12,26 +12,43 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 * Monads
 * Server-side REPL
 * Unit test feature
+* 
+### Installing and General Usage
 
-### Setting up your development environment
+To install: 
+
+  `npm install -g elfenben`
+
+Run the REPL:
+
+  `elfenben`
+
+Transpile:
+
+  `elfenben app.ls`
+
+  `elfenben src/app.elf lib/app.js`
+
+
+### Note to Contributors
+
+##### Setting up your development environment
 * Clone the repository
 * Start up a terminal/console/command line and navigate to the root directory of the repository.
 * Run `npm install`
 * Run `npm link` (this will allow you to use the elfenben command)
 
-### Note to Contributors
+##### Before running tests do:
 
-Before running tests do:
-
-  `npm run build-test`
+`npm run build-test`
   
 To build do:
 
-  `npm run build`
+`npm run build`
 
 To run the tests do:
 
-  `npm test`
+`npm test`
 
 ### Planned Language features
 * Support for ES6 class keyword functionalaity.
@@ -53,4 +70,6 @@ Irakli Gozalishvili [Gozala](https://github.com/Gozala).
 Darren Cruse [darrencruse](https://github.com/darrencruse)
 
 ### Why the name change?
-While Lispyscript is awesome I wanted to take the project into a different direction by adding ES6 syntax, adding optional types, and bringing focus on compatibility with Node as opposed to the browser. For browser compatiblity a transpiler like Babel or Typescript can be used.
+While Lispyscript is awesome I wanted to take the project into a different direction by adding ES6 syntax, 
+adding optional types, and bringing focus on compatibility with Node as opposed to the browser. For browser 
+compatiblity a transpiler like Babel or Typescript can be used.
