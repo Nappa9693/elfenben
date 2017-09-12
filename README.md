@@ -51,7 +51,6 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 `npm test`
 
 ### Planned Language features
-* Support for ES6 class keyword functionalaity.
 * Support for ES6 string interpolation.
 * Optional types (similar to Typescript)
 * Commands for project generation.
