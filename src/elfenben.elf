@@ -10,7 +10,7 @@
          (console.error err.message)
          (process.exit 1)))
 
-(var opt (->
+(var opt (chain
   (require 'node-getopt')
   (.create [['h', 'help', 'display this help'],
     ['v', 'version', 'show version'],
@@ -35,7 +35,7 @@
 
   ;; Start maybe Monad bindings
 
-  ;; when no args do stdin -> stdout compile or run repl and return null to
+  ;; when no args do stdin chain stdout compile or run repl and return null to
   ;; halt operations.
   (noargs
     (when (&&
@@ -102,14 +102,14 @@
               (function (f curr prev) 
                 (cond
                   (&& curr (!= curr.nlink 0))
-                    (->
+                    (chain
                       (require "child_process")
                       (.spawn "elfenben" [f.substring(cwd.length+1)] {stdio: "inherit"}))
                   (&& (object? f) (null? prev) (null? curr))
                     (eachKey f 
                       (function (stat initialf) 
                         (unless (= initialf cwd)
-                          (->
+                          (chain
                             (require "child_process")
                             (.spawn "elfenben" [initialf.substring(cwd.length+1)] {stdio: "inherit"}))))))))
                           

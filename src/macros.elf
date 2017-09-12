@@ -65,9 +65,9 @@
     ret) ~i ~j ~obj))
 
 ;; method chaining macro
-(macro -> (func form rest...)
+(macro chain (func form rest...)
   (#args-if rest... 
-    (-> (((#args-shift form) ~func) ~@form) ~rest...)
+    (chain (((#args-shift form) ~func) ~@form) ~rest...)
     (((#args-shift form) ~func) ~@form)))
 
 ;;;;;;;;;;;;;;;;;;;;;; Iteration and Looping ;;;;;;;;;;;;;;;;;;;;
