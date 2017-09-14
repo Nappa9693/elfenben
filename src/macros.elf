@@ -69,6 +69,15 @@
   (#args-if rest... 
     (chain (((#args-shift form) ~func) ~@form) ~rest...)
     (((#args-shift form) ~func) ~@form)))
+    
+(macro empty? (list)
+  (= (get "length" ~list) 0))
+
+(macro first (list)
+  (get 0 ~list))
+
+(macro rest (list)
+  (Array.prototype.slice.call ~list 1))
 
 ;;;;;;;;;;;;;;;;;;;;;; Iteration and Looping ;;;;;;;;;;;;;;;;;;;;
 
