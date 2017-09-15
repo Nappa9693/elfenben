@@ -74,7 +74,7 @@
   (= (get "length" ~list) 0))
 
 (macro first (list)
-  (get 0 ~list))
+  (Array.prototype.slice.call ~list 0 1))
 
 (macro rest (list)
   (Array.prototype.slice.call ~list 1))
