@@ -25,7 +25,7 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 
 **Transpile:**
 
-  `elfenben app.ls`
+  `elfenben app.elf`
 
   `elfenben src/app.elf lib/app.js`
 
@@ -49,11 +49,6 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 **To run the tests do:**
 
 `npm test`
-
-### Planned Language features
-* Support for ES6 string interpolation.
-* Optional types (similar to Typescript)
-* Commands for project generation.
 
 ### Elfenben is a fork of the awesome Lispyscript project
 Without the great developers behind Lispyscript, Elfenben would not be possible.

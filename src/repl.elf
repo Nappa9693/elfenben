@@ -5,6 +5,20 @@
      ls (require "../lib/ls")
      prefix "elfenben> "
      vm (require "vm"))
+     
+(var code "")
+
+(function getOpenParenCount (codeString)
+  (let result (codeString.match /\(/g))
+  (if (null? result)
+    0
+    (.length result)))
+  
+(function getCloseParenCount (codeString)
+  (let result (codeString.match /\)/g))
+  (if (null? result)
+    0
+    (.length result)))
 
 (set exports.runrepl
   (function ()
@@ -12,8 +26,17 @@
     (rl.on 'line'
       (function (line)
         (try
-          (var l (ls._compile line))
-          (console.log (vm.runInThisContext l))
+          (set code (str code line))
+          (let openParenCount (getOpenParenCount code))
+          (let closeParenCount (getCloseParenCount code))
+        
+          (if (= openParenCount closeParenCount)
+            (do
+              (var l (ls._compile code))
+              (console.log (vm.runInThisContext l))
+              (set code "")
+              (set prefix "elfenben> "))
+            (set prefix "elfenben>... "))
           (function (err)
             (console.log err)))
         (rl.setPrompt prefix prefix.length)
