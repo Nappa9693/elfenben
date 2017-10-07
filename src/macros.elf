@@ -78,6 +78,10 @@
 
 (macro rest (list)
   (Array.prototype.slice.call ~list 1))
+  
+(macro partial (func rest...)
+  (function (...args)
+    (~func ~rest... ...args)))
 
 ;;;;;;;;;;;;;;;;;;;;;; Iteration and Looping ;;;;;;;;;;;;;;;;;;;;
 

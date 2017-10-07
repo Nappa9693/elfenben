@@ -40,6 +40,7 @@
           (function (err)
             (do
               (set code "")
+              (set prefix "elfenben> ")
               (console.log err))))
         (rl.setPrompt prefix prefix.length)
         (rl.prompt)))
