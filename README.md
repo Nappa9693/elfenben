@@ -64,6 +64,6 @@ Irakli Gozalishvili [Gozala](https://github.com/Gozala).
 Darren Cruse [darrencruse](https://github.com/darrencruse)
 
 ### Why the name change?
-While Lispyscript is awesome I wanted to take the project into a different direction by adding ES6 syntax, 
-adding optional types, and bringing focus on compatibility with Node as opposed to the browser. For browser 
-compatiblity a transpiler like Babel or Typescript can be used.
+While Lispyscript is awesome I wanted to take the project into a different direction by
+taking advantage of ES6 and bringing focus on compatibility with Node as opposed to 
+the browser. For browser compatiblity a transpiler like Babel or Typescript can be used.
