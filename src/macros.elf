@@ -74,7 +74,9 @@
   (= (get "length" ~list) 0))
 
 (macro first (list)
-  (Array.prototype.slice.call ~list 0 1))
+  (if (empty? ~list)
+    null
+    (get 0 ~list)))
 
 (macro rest (list)
   (Array.prototype.slice.call ~list 1))
@@ -82,6 +84,14 @@
 (macro partial (func rest...)
   (function (...args)
     (~func ~rest... ...args)))
+    
+(macro pipe (rest...)
+  ((function ___recur (result args)
+    (if (= args.length 1)
+      ((first args) result)
+      (___recur  
+        ((first args) result)
+        (rest args)))) null (array ~@rest...)))
 
 ;;;;;;;;;;;;;;;;;;;;;; Iteration and Looping ;;;;;;;;;;;;;;;;;;;;
 
