@@ -18,6 +18,10 @@
   (if (null? result)
     0
     (.length result)))
+    
+(function getPromptPrefix (openParens closeParens)
+  (let count (- openParens closeParens))
+  ("...".repeat count))
 
 (set exports.runrepl
   (function ()
@@ -35,7 +39,9 @@
               (console.log (vm.runInThisContext l))
               (set code "")
               (set prefix "elfenben> "))
-            (set prefix "elfenben>... "))
+            (do   
+              (set prefix (str "elfenben>" (getPromptPrefix openParenCount closeParenCount) " "))
+              (set code (str code " "))))
           (function (err)
             (do
               (set code "")
