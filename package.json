@@ -9,7 +9,7 @@
     "lisp"
   ],
   "author": "Nappa9693",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "license": "MIT",
   "engines": {
     "node": ">=6.11.2"
