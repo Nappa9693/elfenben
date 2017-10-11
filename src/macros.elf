@@ -86,12 +86,10 @@
     (~func ~rest... ...args)))
     
 (macro pipe (rest...)
-  ((function ___recur (result args)
-    (if (= args.length 1)
-      ((first args) result)
-      (___recur  
-        ((first args) result)
-        (rest args)))) null (array ~@rest...)))
+  ((function (...args)
+      (let ___result null)
+      (javascript "for(let i=0; i< args.length; i++){ if(typeof args[i] === 'function') ___result = args[i](___result); else ___result = args[i]; }")
+      ___result) ~@rest...))
 
 ;;;;;;;;;;;;;;;;;;;;;; Iteration and Looping ;;;;;;;;;;;;;;;;;;;;
 
