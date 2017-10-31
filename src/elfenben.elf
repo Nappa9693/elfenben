@@ -16,7 +16,6 @@
     ['v', 'version', 'show version'],
     ['r', 'run', 'run .elf files directly'],
     ['w', 'watch', 'watch and compile changed files beneath current directory'],
-    ['b', 'browser-bundle', 'create browser-bundle.js in the same directory'],
     ['m', 'map', 'generate source map files'],
     ['i', 'include-dir=ARG+', 'add directory to include search path']])
   (.setHelp (+ "elfenben [OPTION] [<infile>] [<outfile>]\n\n"
@@ -69,13 +68,6 @@
   compile
     (cond 
       (true? opt.options['version']) (do (console.log (+ "Version " ls.version)) null)
-      (true? opt.options['browser-bundle'])
-          (do
-            (var bundle
-              (require.resolve "elfenben/lib/browser-bundle.js"))
-              ((.pipe (fs.createReadStream bundle))
-              (fs.createWriteStream "browser-bundle.js"))
-                      null)
       (true? opt.options['run']) 
           ;; run specified .elf file (directly with no explicit .js file)
           (do
