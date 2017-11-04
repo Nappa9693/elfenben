@@ -29,7 +29,7 @@ Elfenben is Javascript using a 'Lispy' syntax, and compiles to Javascript.
 
   `elfenben src/app.elf lib/app.js`
   
-Documentation for Elfenben can be found [here](https://nappa9693.github.io/elfenben/)
+Documentation for Elfenben can be found [here](https://nappa9693.gitbooks.io/elfenben-docs/content/)
 
 
 ### Note to Contributors
