@@ -34,13 +34,13 @@
   },
   "scripts": {
     "build-test": "elfenben test/test.elf test/test.js",
-    "build": "elfenben src/elfenben.elf lib/elfenben.js && elfenben src/repl.elf lib/repl.js && elfenben src/require.elf lib/require.js ",
+    "build": "elfenben src/elfenben.elf lib/elfenben.js && elfenben src/repl.elf lib/repl.js && elfenben src/require.elf lib/require.js && elfenben src/watcher.elf lib/watcher.js ",
     "test": "node test/test.js"
   },
   "preferGlobal": true,
   "dependencies": {
+    "chokidar": "^1.7.0",
     "node-getopt": ">=0.2.3",
-    "source-map": ">= 0.1.40",
-    "watch": ">= 0.14.0"
+    "source-map": ">= 0.1.40"
   }
 }

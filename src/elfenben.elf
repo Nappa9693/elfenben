@@ -3,7 +3,7 @@
      path (require "path")
      ls (require "./ls")
      repl (require "./repl")
-     watch (require "watch")
+     watcher (require "./watcher")
      isValidFlag /-h\b|-r\b|-v\b|-b\b|-s\b/
      error
        (function (err)
@@ -83,29 +83,10 @@
             (require infile)
             null)
       (true? opt.options['watch'])
-          (do
-            (var cwd (process.cwd))
-            (console.log 'Watching' cwd 'for .elf file changes...')
-            (watch.watchTree cwd 
-              (object 
-                filter (function (f stat) (|| (stat.isDirectory) (!= (f.indexOf '.elf') -1)))
-                ignoreDotFiles true
-                ignoreDirectoryPattern /node_modules/ ) 
-              (function (f curr prev) 
-                (cond
-                  (&& curr (!= curr.nlink 0))
-                    (chain
-                      (require "child_process")
-                      (.spawn "elfenben" [f.substring(cwd.length+1)] {stdio: "inherit"}))
-                  (&& (object? f) (null? prev) (null? curr))
-                    (eachKey f 
-                      (function (stat initialf) 
-                        (unless (= initialf cwd)
-                          (chain
-                            (require "child_process")
-                            (.spawn "elfenben" [initialf.substring(cwd.length+1)] {stdio: "inherit"}))))))))
-                          
-              null)
+          (do 
+            (watcher.createAndStartWatcher)
+            (console.log "Watching current directory for changes...")
+            null)
       true true) ;; no other options - go ahead and compile
   
   ;; if infile undefined

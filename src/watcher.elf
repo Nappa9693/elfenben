@@ -1,0 +1,33 @@
+(const chokidar (require 'chokidar'))
+
+(const contains (function (val search)
+    (> (val.indexOf search) 0)))
+
+(const runElfenben 
+    (function (path)
+        (chain
+            (require 'child_process')
+            (.exec `elfenben ${path}`
+                (object cwd process.cwd)))))
+
+(const fileHandler 
+    (function (path)
+        (when (contains path '.elf')
+            (runElfenben path))))
+            
+(const createAndStartWatcher
+    (function ()
+        ; Initialize the watcher
+        (const watcher (chokidar.watch '.' 
+            (object 
+                ignored '*.js'
+                persistent true
+                ignorePermissionErrors false)))
+        
+        ; Apply event listeners
+        (watcher.on 'change' 
+            (function (path)
+                (fileHandler path)))
+        null))
+        
+(set exports.createAndStartWatcher createAndStartWatcher)
